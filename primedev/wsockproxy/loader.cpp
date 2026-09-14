@@ -105,8 +105,8 @@ bool LoadNorthstar()
 
 		// Check if "Northstar.dll" exists in profile directory, if it doesnt fall back to root
 		// Absolute profiles replace exePath when joined.
-		fs::path ProfilePath = fs::path(exePath) / std::wstring(strProfile.begin(), strProfile.end());
-		swprintf_s(northstarPath, L"%s\\Northstar.dll", ProfilePath.c_str());
+		fs::path profilePath = fs::path(exePath) / std::wstring(strProfile.begin(), strProfile.end());
+		swprintf_s(northstarPath, L"%s\\Northstar.dll", profilePath.c_str());
 
 		if (!fs::exists(fs::path(northstarPath)))
 			swprintf_s(northstarPath, L"%s\\Northstar.dll", exePath);
